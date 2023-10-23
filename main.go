@@ -3,6 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	s := "Hello, " + "world!!"
-	fmt.Println(s)
+	const x = 1
+	y := 1
+	f := 1.2 + (x+2)*float64(y)
+	fmt.Println(f)
 }
