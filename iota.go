@@ -1,4 +1,4 @@
-package main
+package iota
 
 import "fmt"
 
@@ -17,7 +17,7 @@ const (
 	Pig                    //Animal(0)
 )
 
-func iota_study() {
+func iota() {
 	var fruit Fruit = Apple
 	fmt.Println(fruit)
 
