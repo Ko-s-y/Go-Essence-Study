@@ -1,29 +1,49 @@
 package main
 
-import "fmt"
-
-type Fruit int
-type Animal int
-
-const (
-	Apple  Fruit = iota //Fruit(0)
-	Orange              //Fruit(1)
-	Banana              //Fruit(2)
+import (
+	"fmt"
+	"log"
 )
 
-const (
-	Monky    Animal = iota //Animal(0)
-	Elephant               //Animal(0)
-	Pig                    //Animal(0)
-)
+// User 構造体を定義
+type User struct {
+	Name string
+}
+
+// users リストを仮想的に定義
+var users = []*User{
+	{Name: "Alice"},
+	{Name: "Bob"},
+	{Name: "Charlie"},
+}
 
 func main() {
-	var fruit Fruit = Apple
-	fmt.Println(fruit)
+	// FindUser 関数を使ってユーザー "Bob" を検索し、エラー処理を行う
+	user, err := FindUser("Boba")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(user.Name)
+}
 
-	// 下記はコンパイルエラーが発生する
-	// fruit = Elephant
-	// fmt.Println(fruit)
-	// # command-line-arguments
-	// ./main.go:24:10: cannot use Elephant (constant 1 of type Animal) as Fruit value in assignment
+// FindUser 関数：指定された名前のユーザーを検索
+func FindUser(name string) (*User, error) {
+	// findUserFromList 関数を呼び出してユーザーを検索し、エラー処理を行う
+	user, err := findUserFromList(users, name)
+	if err != nil {
+		return nil, err
+	}
+	return user, nil
+}
+
+// findUserFromList 関数：ユーザーをリストから検索
+func findUserFromList(userList []*User, name string) (*User, error) {
+	// リスト内のユーザーをループで走査して指定された名前のユーザーを検索
+	for _, user := range userList {
+		if user.Name == name {
+			return user, nil
+		}
+	}
+	// ユーザーが見つからなかった場合、エラーメッセージを返す
+	return nil, fmt.Errorf("ユーザー '%s' は見つかりませんでした", name)
 }
