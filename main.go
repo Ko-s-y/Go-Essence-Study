@@ -2,9 +2,14 @@ package main
 
 import "fmt"
 
+const (
+	Apple = iota
+	Orange
+	Banana
+)
+
 func main() {
-	const x = 1
-	y := 1
-	f := 1.2 + (x+2)*float64(y)
-	fmt.Println(f)
+	fmt.Println(Apple)  // 0
+	fmt.Println(Orange) // 1
+	fmt.Println(Banana) // 2
 }
