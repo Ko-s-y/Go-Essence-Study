@@ -5,15 +5,16 @@ import (
 )
 
 func main() {
-	i := 1
+	i := 2
 
 	switch i {
 	case 1:
 		fmt.Println("one")
 	case 2:
-		fmt.Println("two")
-	case 3:
-		fmt.Println("three")
+		fmt.Print("two or ")
+		fallthrough // two or three or four が返る
+	case 3, 4:
+		fmt.Println("three or four")
 	default:
 		fmt.Println("other")
 	}
