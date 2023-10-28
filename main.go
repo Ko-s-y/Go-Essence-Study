@@ -1,13 +1,16 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	title := "Hello, world"
-
-	for i := 0; i < 3; i++ {
-		fmt.Println(title)
+finished:
+	// ラベル付きループ
+	for i := 0; i < 100; i++ {
+		for j := 0; j < 100; j++ {
+			if true {
+				fmt.Println("break!!")
+				break finished // 内側のループから外側のループに対して break 文を実行
+			}
+		}
 	}
 }
