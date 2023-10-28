@@ -5,5 +5,9 @@ import (
 )
 
 func main() {
-	fmt.Println("hello, world!")
+	title := "Hello, world"
+
+	for i := 0; i < 3; i++ {
+		fmt.Println(title)
+	}
 }
