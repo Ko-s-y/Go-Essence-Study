@@ -1,4 +1,4 @@
-package switch_case
+package main
 
 import (
 	"fmt"
@@ -18,4 +18,9 @@ func switch_case() {
 	default:
 		fmt.Println("other")
 	}
+}
+
+// go run switch_case.go
+func main() {
+	switch_case()
 }

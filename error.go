@@ -1,4 +1,4 @@
-package error
+package main
 
 import (
 	"fmt"
@@ -15,15 +15,6 @@ var users = []*User{
 	{Name: "Alice"},
 	{Name: "Bob"},
 	{Name: "Charlie"},
-}
-
-func error() {
-	// FindUser 関数を使ってユーザー 引数に与えた文字列 を検索し、エラー処理を行う
-	user, err := FindUser("Bob")
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(user.Name)
 }
 
 // FindUser 関数：指定された名前のユーザーを検索
@@ -46,4 +37,14 @@ func findUserFromList(userList []*User, name string) (*User, error) {
 	}
 	// ユーザーが見つからなかった場合、エラーメッセージを返す
 	return nil, fmt.Errorf("ユーザー '%s' は見つかりませんでした", name)
+}
+
+// go run error.go
+func main() {
+	// FindUser 関数を使ってユーザー 引数に与えた文字列 を検索し、エラー処理を行う
+	user, err := FindUser("Bob")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(user.Name)
 }

@@ -1,4 +1,4 @@
-package if_else
+package main
 
 import (
 	"fmt"
@@ -9,7 +9,12 @@ type User struct {
 	Name string
 }
 
-func if_else() {
+func userName() (*User, error) {
+	return &User{Name: "John"}, nil
+}
+
+// go run if_else.go
+func main() {
 	user, err := userName()
 	if err == nil {
 		fmt.Println(user.Name)
@@ -22,8 +27,4 @@ func if_else() {
 	} else {
 		log.Println(err)
 	}
-}
-
-func userName() (*User, error) {
-	return &User{Name: "John"}, nil
 }
