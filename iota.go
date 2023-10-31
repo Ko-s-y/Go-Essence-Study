@@ -17,7 +17,6 @@ const (
 	Pig                    //Animal(0)
 )
 
-// go run iota.go
 func main() {
 	var fruit Fruit = Apple
 	fmt.Println(fruit)

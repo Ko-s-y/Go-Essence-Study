@@ -39,7 +39,6 @@ func findUserFromList(userList []*User, name string) (*User, error) {
 	return nil, fmt.Errorf("ユーザー '%s' は見つかりませんでした", name)
 }
 
-// go run error.go
 func main() {
 	// FindUser 関数を使ってユーザー 引数に与えた文字列 を検索し、エラー処理を行う
 	user, err := FindUser("Bob")

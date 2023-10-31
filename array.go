@@ -2,7 +2,6 @@ package main
 
 import "fmt"
 
-// go run array.go
 func main() {
 	array_test()
 	slice_test()

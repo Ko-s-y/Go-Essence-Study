@@ -2,7 +2,6 @@ package main
 
 import "fmt"
 
-// go run for_loop.go
 func main() {
 finished:
 	// ラベル付きループ

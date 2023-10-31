@@ -20,7 +20,6 @@ func switch_case() {
 	}
 }
 
-// go run switch_case.go
 func main() {
 	switch_case()
 }
